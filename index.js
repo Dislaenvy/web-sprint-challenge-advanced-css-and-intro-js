@@ -228,10 +228,10 @@ There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is current
  
  Example, if getArtistByIndex is invoked with the artists array and the number 0, it will return `the artist at index 0 is Amedeo Modigliani` */
 
-function getArtistByIndex(/*Your Code Here*/) {
-  /*Your Code Here*/
+function getArtistByIndex(arr, num) {
+   return `the artist at index ${arr[num].id} is  ${arr[num].name}`
 }  
-
+getArtistByIndex(artists,2)
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -242,10 +242,19 @@ Use get20s to do the following:
 Example born in 1901 and died in 1959 - included -- born in 1889 and died in 1925 not included
 If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 
-function get20s(/*Your Code Here*/){
-  /*Your Code Here*/
+function get20s(array, string, name){
+  const newArr = [];
+  for (let i = 0; i < artists.length; i++){
+    if (artists[i].string.includes('Salvador Dali') || artists[i].string.includes('FridaKahlo')){
+      newArr.push(artists[i]);
+    
+    }
+      
+  } 
+  return newArr;
 }
-
+// console.log(newArr)
+// console.log(get20s(artists, 'Salvador Dali', 'Frida Kahlo'));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -257,8 +266,14 @@ function get20s(/*Your Code Here*/){
  
  For example, if removeArtist is invoked with the artists array and the number 0, it will remove Amedeo Modigliani from our dataset and return the number 19. */
 
-function removeArtist(/*Your Code Here*/){
-   /*Your Code Here*/
+function removeArtist(array, i){
+  
+    let string = array [i]
+    
+    array.splice(i,1)
+
+  
+   return array.length;
 }
    
 
@@ -278,9 +293,35 @@ Use addArtist to do the following:
 
 Example: addArtist(artists) should return the artists array with the above object added to the end of the array. */
 
-function addArtist(/*Your Code Here*/){
-    /*Your Code Here*/
-  }
+function addArtist(myArray){
+    const myBio = [];
+      myArray.push(
+         {
+          id: 20,
+          name: 'Merfi Disla', 
+          years: '1993 - 2021',
+          genre: 'Web Design', 
+          nationality: 'Dominican',
+          bio: 'I am from The Dominican Republic. I moved to New York 7 years ago.',
+         })
+       return myArray;
+        }
+
+
+
+
+
+
+
+
+          // id= 20,
+          // name: Merfi,
+          // years:1993 2021,
+          // gender:Web Disign,
+          // nationaly:DOminican,
+          // bio:I am from DOminican Republican, and be living in the USA for 6 years,})
+    
+  
 
   
 
@@ -291,10 +332,15 @@ Use lotsOfArt to do the following:
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]*/
 
-function lotsOfArt(/*Your Code Here*/){
-  /*Your Code Here*/
+function lotsOfArt(array,string){
+  const newArray = [];
+  for (let i = 0; i < array.length; i++){
+    if (array[i].includes(string)){
+      newArray.push(array[i]);
+    } 
+  }
+  return newArray;
 }
-
 
 
 
